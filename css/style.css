@@ -1,0 +1,22 @@
+body {
+    background: #bfbfbf;
+}
+
+#text_content {
+    display: block;
+    border: 1px dotted blue;
+    min-height: 5em;
+    margin-top: 1em;
+}
+
+#the_canvas{
+	background: white;
+	display: block;
+	margin: 20px 0px 20px 0px;
+}
+
+#main{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+

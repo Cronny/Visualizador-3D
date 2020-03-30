@@ -1,5 +1,1 @@
----
-layout: post
-title: Visualizador 3D
----
-Ya sirve esto o queso rey???''
+Dado un archivo en obj lo visualizamos. Podemos cambiar la posición de la cámara en cada uno de los ejes.

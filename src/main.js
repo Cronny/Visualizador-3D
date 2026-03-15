@@ -2,12 +2,35 @@ window.addEventListener("load", function(evt) {
     let file_input = document.getElementById("file_input");
     let canvas = document.getElementById("the_canvas");
     let context = canvas.getContext("2d");
+    let toggleObjBtn = document.getElementById("toggle_obj_btn");
+    let objTextPanel = document.getElementById("obj_text_panel");
 
     let camX = document.getElementById("camX");
     let camY = document.getElementById("camY");
     let camZ = document.getElementById("camZ");
+    let ultimoTextoObj = "";
+
+    function actualizaPanelObj() {
+        if (ultimoTextoObj.length > 0) {
+            objTextPanel.textContent = ultimoTextoObj;
+        } else {
+            objTextPanel.textContent = "Aun no se ha cargado ningun archivo .obj.";
+        }
+    }
+
+    toggleObjBtn.addEventListener("click", function() {
+        if (objTextPanel.hidden) {
+            actualizaPanelObj();
+            objTextPanel.hidden = false;
+            toggleObjBtn.textContent = "Ocultar contenido .obj";
+        } else {
+            objTextPanel.hidden = true;
+            toggleObjBtn.textContent = "Mostrar contenido .obj";
+        }
+    });
 
     function cargarTexto(texto) {
+        ultimoTextoObj = texto;
         let new_vertices = [];
         let lector = new CG.Lector(texto);
         // Posición inicial de la cámara.

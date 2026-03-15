@@ -12,8 +12,8 @@ body {
 
 #the_canvas{
     background: #f5f0e6;
-	display: block;
-	margin: 20px 0px 20px 0px;
+    display: block;
+    margin: 20px 0;
 }
 
 #main{
@@ -62,6 +62,47 @@ body {
 
 #encabezado {
     text-align: center;
+}
+
+#acciones-obj {
+    margin: 8px 0 0 0;
+}
+
+#toggle_obj_btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: #6f7ccc;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#toggle_obj_btn:hover {
+    filter: brightness(1.08);
+}
+
+#visor-obj {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#obj_text_panel {
+    width: 320px;
+    height: 480px;
+    margin: 20px 0;
+    padding: 10px;
+    overflow: auto;
+    text-align: left;
+    white-space: pre;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+    background: #fff8f0;
+    color: #3f3f3f;
 }
 
 #camara input {

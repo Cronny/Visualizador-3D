@@ -34,12 +34,14 @@ var CG = (function(CG) {
             lineas.forEach(function(linea) {
                 linea = linea.trim();
                 switch (linea.slice(0, 2)) {
+                /** Casos para cada tipo de línea. Para el proyecto 1 sólo se toman en cuenta los vértices
                 case "vt": // Encontramos un vértice de textura.
                     CG.Lector.convierteVector(linea, "vt", verticest);
                     break;
                 case "vn": // Encontramos un vértice normal.
                     CG.Lector.convierteVector(linea, "vn", verticesn);
                     break;
+                */
                 case "v ": // Encontramos un vértice.
                     CG.Lector.convierteVector(linea, "v ", vertices);
                     break;

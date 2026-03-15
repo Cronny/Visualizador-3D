@@ -11,7 +11,7 @@ body {
 }
 
 #the_canvas{
-	background: white;
+    background: #f5f0e6;
 	display: block;
 	margin: 20px 0px 20px 0px;
 }
@@ -62,4 +62,15 @@ body {
 
 #encabezado {
     text-align: center;
+}
+
+#camara input {
+    padding: 7px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #000000;
+    font-weight: 600;
+}
+
+#camara input::placeholder {
+    color: rgba(116, 114, 114, 0.9);
 }

@@ -15,11 +15,30 @@
 
     <body>
         <div id="main" align="center">
-            <input type="file" id="file_input"/>
+            <div id="encabezado"> 
+                <h1>Visualizador 3D</h1>
+                Carga un archivo .obj (o elije uno de los ejemplos) para visualizarlo en 3D.<br>
+                Puedes modificar la posición de la cámara ingresando las coordenadas X, Y y Z.
+            </div>
+
+            <div id="carga-archivo"> 
+                <input type="file" id="file_input"/>
+            </div>
+
+            <div id="ejemplos">
+                <button class="ejemplo-btn" data-src="Ejemplos/al.obj">Al</button>
+                <button class="ejemplo-btn" data-src="Ejemplos/sandal.obj">Sandalia</button>
+                <button class="ejemplo-btn" data-src="Ejemplos/skyscraper.obj">Rascacielos</button>
+            </div>
+
             <canvas id="the_canvas" width="640" height="480"></canvas>
-            <input type="text" id="camX" placeholder="Posiciona X">
-            <input type="text" id="camY" placeholder="Posiciona Y">
-            <input type="text" id="camZ" placeholder="Posiciona Z">
+
+            <div id="camara">
+                <p>Cámara:</p>
+                <input type="text" id="camX" placeholder="X">
+                <input type="text" id="camY" placeholder="Y">
+                <input type="text" id="camZ" placeholder="Z">
+            </div>
         </div>
         
     </body>

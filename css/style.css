@@ -21,6 +21,15 @@ body {
 }
 
 #ejemplos {
-	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 5px;
 }
 
+#carga-archivo {
+    margin-top: 1%;
+    margin-left: 4%;
+}
+
+#encabezado {
+    text-align: center;
+}

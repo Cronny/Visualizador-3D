@@ -64,6 +64,7 @@ window.addEventListener("load", function(evt) {
                 cara.forEach((vertex) => {
                     context.beginPath();
                     vertex.forEach((vector,index) => {
+                        if (vector === undefined) return;
                         new_vertices[index] = matrix.multiplyVector(vector);
                         vector = imagenTransform(canvas.width, canvas.height, new_vertices[index]);
                         if (index === 0) {

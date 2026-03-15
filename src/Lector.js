@@ -32,15 +32,14 @@ var CG = (function(CG) {
             let lineas = texto.split("\n"); //Arreglo con cada línea en una entrada.
 
             lineas.forEach(function(linea) {
+                linea = linea.trim();
                 switch (linea.slice(0, 2)) {
-                    /* Si quisieramos trabajar con texturas y vertices normales, usamos esto:
-                      case "vt": // Encontramos un vértice de textura.
-                      CG.Lector.convierteVector(linea, "vt", verticest);
-                      break;
-                      case "vn": // Encontramos un vértice normal.
-                      CG.Lector.convierteVector(linea, "vn", verticesn);
-                      break;
-                    */
+                case "vt": // Encontramos un vértice de textura.
+                    CG.Lector.convierteVector(linea, "vt", verticest);
+                    break;
+                case "vn": // Encontramos un vértice normal.
+                    CG.Lector.convierteVector(linea, "vn", verticesn);
+                    break;
                 case "v ": // Encontramos un vértice.
                     CG.Lector.convierteVector(linea, "v ", vertices);
                     break;
@@ -48,11 +47,14 @@ var CG = (function(CG) {
                     let verts = [];
                     //let texts = [];
                     //let nrms = [];
-                    let parametros = linea.substr(2).split(" ");
+                    let parametros = linea.substr(2).trim().split(/\s+/);
                     
                     parametros.forEach(function(p) {
                         let lverts = p.split("/");
-                        verts.push(vertices[parseInt(lverts[0]) - 1]);
+                        let indice = parseInt(lverts[0], 10) - 1;
+                        if (!isNaN(indice) && vertices[indice] !== undefined) {
+                            verts.push(vertices[indice]);
+                        }
                         /* Casos para cuando tomemos en cuenta los vertices de textura y normales.
                         if(lverts[1] != "")
                             texts.push(verticest[parseInt(lverts[1]) - 1]);
@@ -61,8 +63,10 @@ var CG = (function(CG) {
                         */
                     });
                     // ¿Una estructura mejor aquí?
-                    let f = [verts];
-                    caras.push(f);
+                    if (verts.length > 0) {
+                        let f = [verts];
+                        caras.push(f);
+                    }
                 
 
                 }
@@ -82,9 +86,9 @@ var CG = (function(CG) {
             // Primero separamos los valores y los parseamos a flotantes.
             let valores = "";
             if(prefijo == "v ")  //Esta condición es para tomar correctamente los valores.
-                valores = linea.substr(2).split(" ");
+                valores = linea.substr(2).trim().split(/\s+/);
             else 
-                valores = linea.substr(3).split(" ");
+                valores = linea.substr(3).trim().split(/\s+/);
             valores = valores.map(function(s) {
                 return parseFloat(s);
             });

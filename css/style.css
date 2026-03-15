@@ -40,15 +40,23 @@ body {
 }
 
 #ejemplos .ejemplo-btn:nth-child(1) {
-    background: #cb6ea1;
+    background: #d26fa8;
 }
 
 #ejemplos .ejemplo-btn:nth-child(2) {
-    background: #7c88d6;
+    background: #b478be;
 }
 
 #ejemplos .ejemplo-btn:nth-child(3) {
-    background: #4e9ac8;
+    background: #947fd0;
+}
+
+#ejemplos .ejemplo-btn:nth-child(4) {
+    background: #728ccf;
+}
+
+#ejemplos .ejemplo-btn:nth-child(5) {
+    background: #549bc9;
 }
 
 .ejemplo-btn:hover {

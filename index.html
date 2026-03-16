@@ -50,8 +50,25 @@
                 <input type="number" id="camY" placeholder="Y">
                 <input type="number" id="camZ" placeholder="Z">
             </div>
-        </div>
-        
+
+            <div id="Explicacion">
+                <h3>¿Qué es esto?</h3>
+                <p>
+                    Este programa permite visualizar archivos <strong>.obj</strong> y cambiar la posición de la 
+                    cámara para verlo desde diferentes ángulos. 
+                </p>
+                <p>
+                    Un archivo <strong>.obj</strong> es un formato de modelo 3D que guarda la forma de un objeto
+                    a partir de vertices, lineas y caras. Se usa para representar figuras tridimensionales en
+                    programas de modelado y visualizacion.
+                </p>
+                <p>
+                    Mas a detalle, el programa lee los vertices y caras del archivo, aplica transformaciones
+                    de matrices (algebra lineal) para ubicar la camara y proyectar el modelo 3D sobre un 
+                    plano 2D dentro del canvas. Este proceso es una base fundamental de los motores graficos,
+                    el renderizado y muchas herramientas de simulacion y videojuegos.
+                </p>
+            </div>
     </body>
 
 </html>
